@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skeyy Admin Panel</title>
+    <link rel="stylesheet" href="css/main.min.css" />
+  </head>
+  <body>
+    <div class="grid">
+      <div class="grid__nav">
+        <nav class="nav">
+          <a href="index.html" class="nav__logo-wrapper">
+            <img src="img/skey_logo.jpg" alt="sKeyy Logo" class="nav__logo" />
+          </a>
+
+          <div class="nav__contents">
+            <div class="nav__link-wrapper">
+              <a href="index.html" class="nav__link">Dashboard</a>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Orders</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="orders-unfulfilled.html" class="nav__link"
+                    >Unfulfilled (12)</a
+                  >
+                </li>
+                <li class="nav__link-list-item">
+                  <a href="orders-fulfilled.html" class="nav__link"
+                    >Fulfilled (12)</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Products</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="add-product.html" class="nav__link nav__link--active"
+                    >Add New</a
+                  >
+                </li>
+                <li class="nav__link-list-item">
+                  <a href="select-product.html" class="nav__link"
+                    >Modify Existing</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Promos & Discounts</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="modify-discounts.html" class="nav__link"
+                    >Apply discounts</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Users</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="view-users.html" class="nav__link">View Users</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="grid__main">
+        <div class="nav-up">
+          <div class="nav-up__left">
+            <div class="s bold nav-up__current-page">Dashboard</div>
+
+            <form class="nav-up__search-wrapper" id="js-search-form">
+              <img
+                src="img/icon-search.svg"
+                alt="Search icon"
+                class="nav-up__seach-icon"
+              />
+
+              <input
+                type="text"
+                class="nav-up__input-control"
+                id="js-search"
+                placeholder="Search here..."
+              />
+            </form>
+          </div>
+
+          <div class="nav-up__right">
+            <a href="profile.html" class="nav-up__user">
+              <div class="nav-up__user-icon-wrapper">
+                <img src="img/icon-user.svg" alt="" class="nav-up__user-icon" />
+              </div>
+
+              Admin
+            </a>
+
+            <a href="logout.html" class="link">Logout</a>
+          </div>
+        </div>
+
+        <main class="grid__main">
+          <div class="grid__breadcrum">
+            <div class="grid__breadcrum-item">
+              <a
+                href="index.html"
+                class="grid__breadcrum-item grid__breadcrum-link"
+                >Dashboard</a
+              >
+            </div>
+            <div class="grid__breadcrum-item">Add New Products</div>
+          </div>
+
+          <section class="product">
+            <section class="product__section">
+              <h2 class="m bold product__section-title">Collection Details</h2>
+              <div class="input">
+                <label for="js-collection" class="input__label"
+                  >Product Collection*</label
+                >
+
+                <select id="js-collection" class="input__control">
+                  <option value="">Select Category</option>
+                </select>
+                <span class="input__error">Please select a category</span>
+              </div>
+            </section>
+
+            <section class="product__section">
+              <h2 class="m bold product__section-title">Product Details</h2>
+
+              <div class="input">
+                <label for="js-vendor-select" class="input__label"
+                  >Assign to Vendor (Optional)</label
+                >
+                <select id="js-vendor-select" class="input__control">
+                  <option value="">No Vendor (Admin Product)</option>
+                </select>
+                <span class="input__error">Please select a vendor</span>
+              </div>
+
+              <div class="input">
+                <label for="js-product-name" class="input__label"
+                  >Product Name*</label
+                >
+                <input
+                  type="text"
+                  class="input__control"
+                  id="js-product-name"
+                />
+                <span class="input__error">Please enter a product name</span>
+              </div>
+
+              <div class="product__addon-wrapper">
+                <div class="input">
+                  <label for="js-product-brand" class="input__label"
+                    >Product Brand*</label
+                  >
+                  <select class="input__control" id="js-product-brand">
+                    <option value="">Select Brand</option>
+                  </select>
+                  <span class="input__error">Please select a brand</span>
+                </div>
+
+                <button class="btn btn--ghost">Add new brand</button>
+              </div>
+
+              <div class="product__addon-wrapper">
+                <div class="input">
+                  <label for="js-product-colour" class="input__label"
+                    >Product Colour*</label
+                  >
+                  <input
+                    type="text"
+                    class="input__control"
+                    id="js-product-colour"
+                    placeholder="Enter product color"
+                  />
+                  <span class="input__error">Please enter a product color</span>
+                </div>
+
+
+              </div>
+
+              <div class="input">
+                <label for="js-product-size" class="input__label"
+                  >Product Size *</label
+                >
+
+                <input
+                  type="text"
+                  class="input__control"
+                  id="js-product-size"
+                  placeholder="Enter product size (e.g., S, M, L, XL)"
+                />
+                <span class="input__error">Please enter a product size</span>
+              </div>
+
+              <div class="input">
+                <label for="js-product-description" class="input__label"
+                  >Product Description *</label
+                >
+                <textarea
+                  class="input__control input__control--textarea"
+                  id="js-product-description"
+                  placeholder="Enter product description..."
+                ></textarea>
+                <span class="input__error">Please enter a product description</span>
+              </div>
+
+              <div class="input">
+                <label for="js-product-specification" class="input__label"
+                  >Product Specification</label
+                >
+                <textarea
+                  class="input__control input__control--textarea"
+                  id="js-product-specification"
+                  placeholder="Enter product specifications..."
+                ></textarea>
+                <span class="input__error">Please enter product specifications</span>
+              </div>
+
+              <div class="input">
+                <label for="js-product-stock" class="input__label"
+                  >Stock Quantity</label
+                >
+                <input
+                  type="number"
+                  class="input__control"
+                  id="js-product-stock"
+                  value="0"
+                  min="0"
+                />
+                <span class="input__error">Please enter a valid stock quantity</span>
+              </div>
+
+              <div class="input">
+                <label for="js-product-discount" class="input__label"
+                  >Discount (%)</label
+                >
+                <input
+                  type="number"
+                  class="input__control"
+                  id="js-product-discount"
+                  value="0"
+                  min="0"
+                  max="100"
+                />
+                <span class="input__error">Please enter a valid discount percentage</span>
+              </div>
+
+              <div class="input">
+                <label for="js-product-price" class="input__label"
+                  >Product Price *</label
+                >
+                <input
+                  type="number"
+                  class="input__control"
+                  id="js-product-price"
+                  placeholder="Enter price"
+                  min="0"
+                  step="0.01"
+                />
+                <span class="input__error">Please enter a product price</span>
+              </div>
+
+              <div class="product__images-wrapper">
+                <div class="product__img-wrapper">
+                  <div class="input">
+                    <label for="js-product-image-1" class="input__label"
+                      >Product Image 1 *</label
+                    >
+                    <input
+                      type="file"
+                      id="js-product-image-1"
+                      class="input__control"
+                      accept="image/*"
+                    />
+                    <span class="input__error"
+                      >Please upload at least one product image</span
+                    >
+                  </div>
+                  <img
+                    src="img/placeholder.jpg"
+                    alt=""
+                    class="product__thumbnail"
+                  />
+                </div>
+
+                <div class="product__img-wrapper">
+                  <div class="input">
+                    <label for="js-product-image-2" class="input__label"
+                      >Product Image 2</label
+                    >
+                    <input
+                      type="file"
+                      id="js-product-image-2"
+                      class="input__control"
+                      accept="image/*"
+                    />
+                  </div>
+                  <img
+                    src="img/placeholder.jpg"
+                    alt=""
+                    class="product__thumbnail"
+                  />
+                </div>
+
+                <div class="product__img-wrapper">
+                  <div class="input">
+                    <label for="js-product-image-3" class="input__label"
+                      >Product Image 3</label
+                    >
+                    <input
+                      type="file"
+                      id="js-product-image-3"
+                      class="input__control"
+                    />
+                  </div>
+                  <img
+                    src="img/placeholder.jpg"
+                    alt=""
+                    class="product__thumbnail"
+                  />
+                </div>
+
+                <div class="product__img-wrapper">
+                  <div class="input">
+                    <label for="js-product-image-4" class="input__label"
+                      >Product Image 4</label
+                    >
+                    <input
+                      type="file"
+                      id="js-product-image-4"
+                      class="input__control"
+                    />
+                  </div>
+                  <img
+                    src="img/placeholder.jpg"
+                    alt=""
+                    class="product__thumbnail"
+                  />
+                </div>
+
+                <div class="product__img-wrapper">
+                  <div class="input">
+                    <label for="js-product-image-5" class="input__label"
+                      >Product Image 5</label
+                    >
+                    <input
+                      type="file"
+                      id="js-product-image-5"
+                      class="input__control"
+                    />
+                  </div>
+                  <img
+                    src="img/placeholder.jpg"
+                    alt=""
+                    class="product__thumbnail"
+                  />
+                </div>
+
+                <div class="product__img-wrapper">
+                  <div class="input">
+                    <label for="js-product-image-6" class="input__label"
+                      >Product Image 6</label
+                    >
+                    <input
+                      type="file"
+                      id="js-product-image-6"
+                      class="input__control"
+                    />
+                  </div>
+                  <img
+                    src="img/placeholder.jpg"
+                    alt=""
+                    class="product__thumbnail"
+                  />
+                </div>
+
+                <div class="product__img-wrapper">
+                  <div class="input">
+                    <label for="js-product-image-7" class="input__label"
+                      >Product Image 7</label
+                    >
+                    <input
+                      type="file"
+                      id="js-product-image-7"
+                      class="input__control"
+                    />
+                  </div>
+                  <img
+                    src="img/placeholder.jpg"
+                    alt=""
+                    class="product__thumbnail"
+                  />
+                </div>
+
+                <div class="product__img-wrapper">
+                  <div class="input">
+                    <label for="js-product-image-8" class="input__label"
+                      >Product Image 8</label
+                    >
+                    <input
+                      type="file"
+                      id="js-product-image-8"
+                      class="input__control"
+                    />
+                  </div>
+                  <img
+                    src="img/placeholder.jpg"
+                    alt=""
+                    class="product__thumbnail"
+                  />
+                </div>
+              </div>
+
+              <div class="product__btn-wrapper">
+                <button class="btn btn--primary" id="js-product-btn">
+                  Add Product
+                </button>
+              </div>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <footer class="footer">Copyright 2025 - sKeyy</footer>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/product-management.js"></script>
+  </body>
+</html>

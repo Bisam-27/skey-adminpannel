@@ -1,0 +1,52 @@
+.input {
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+
+  &--radio {
+    &:not(:last-child) {
+      margin-bottom: 0.4rem;
+    }
+    .input__label {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .input__control {
+      width: max-content;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__control {
+    display: block;
+
+    width: 100%;
+    padding: 2rem;
+    background-color: $color-accent-bg;
+    border: 1px solid $color-gray;
+
+    font-size: inherit;
+
+    &--textarea {
+      resize: vertical;
+      min-height: 20rem;
+    }
+
+    &--error {
+      & + .input__error {
+        display: block;
+      }
+    }
+  }
+
+  &__error {
+    display: none;
+    color: red;
+  }
+}
