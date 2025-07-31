@@ -1,0 +1,31 @@
+.dashboard {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+
+    max-width: 80rem;
+  }
+
+  &__card {
+    padding: 1rem 2rem 3.2rem;
+    background-color: $color-white;
+
+    text-align: center;
+  }
+
+  &__status {
+    text-align: right;
+    &--positive {
+      color: green;
+    }
+
+    &--negative {
+      color: red;
+    }
+  }
+
+  &__charts {
+    padding: 2rem;
+  }
+}

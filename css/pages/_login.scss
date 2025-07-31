@@ -1,0 +1,63 @@
+.login {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-gap: 2rem;
+
+  width: 100vw;
+  height: 100vh;
+
+  @include respond(1140px) {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  @include respond(830px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+  }
+
+  &__logo {
+    width: 100%;
+    height: auto;
+    max-width: 60rem;
+
+    @include respond(830px) {
+      width: auto;
+      height: 30rem;
+    }
+  }
+
+  &__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: 100%;
+    padding: 16rem 8rem 4rem;
+    background-color: $color-white;
+    box-shadow: -10px 0 20px rgba($color-black, 0.1);
+
+    @include respond(500px) {
+      padding: 6rem 3.2rem 4rem;
+    }
+  }
+
+  &__header {
+  }
+
+  &__form {
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  &__copyright {
+    margin-top: auto;
+  }
+}

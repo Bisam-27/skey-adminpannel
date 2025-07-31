@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skeyy Admin Panel</title>
+    <link rel="stylesheet" href="css/main.min.css" />
+  </head>
+  <body>
+    <div class="grid">
+      <div class="grid__nav">
+        <nav class="nav">
+          <a href="index.html" class="nav__logo-wrapper">
+            <img src="img/skey_logo.jpg" alt="sKeyy Logo" class="nav__logo" />
+          </a>
+
+          <div class="nav__contents">
+            <div class="nav__link-wrapper">
+              <a href="index.html" class="nav__link">Dashboard</a>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Orders</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a
+                    href="orders-unfulfilled.html"
+                    class="nav__link nav__link--active"
+                    >Unfulfilled (12)</a
+                  >
+                </li>
+                <li class="nav__link-list-item">
+                  <a href="orders-fulfilled.html" class="nav__link"
+                    >Fulfilled (12)</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Products</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="add-product.html" class="nav__link">Add New</a>
+                </li>
+                <li class="nav__link-list-item">
+                  <a href="select-product.html" class="nav__link"
+                    >Modify Existing</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Promos & Discounts</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="modify-discounts.html" class="nav__link"
+                    >Apply discounts</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Users</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="view-users.html" class="nav__link">View Users</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="grid__main">
+        <div class="nav-up">
+          <div class="nav-up__left">
+            <div class="s bold nav-up__current-page">Dashboard</div>
+
+            <form class="nav-up__search-wrapper" id="js-search-form">
+              <img
+                src="img/icon-search.svg"
+                alt="Search icon"
+                class="nav-up__seach-icon"
+              />
+
+              <input
+                type="text"
+                class="nav-up__input-control"
+                id="js-search"
+                placeholder="Search here..."
+              />
+            </form>
+          </div>
+
+          <div class="nav-up__right">
+            <a href="profile.html" class="nav-up__user">
+              <div class="nav-up__user-icon-wrapper">
+                <img src="img/icon-user.svg" alt="" class="nav-up__user-icon" />
+              </div>
+
+              Admin
+            </a>
+
+            <a href="logout.html" class="link">Logout</a>
+          </div>
+        </div>
+
+        <main class="grid__main">
+          <div class="grid__breadcrum">
+            <div class="grid__breadcrum-item">
+              <a
+                href="index.html"
+                class="grid__breadcrum-item grid__breadcrum-link"
+                >Dashboard</a
+              >
+            </div>
+
+            <div class="grid__breadcrum-item">Unfulfilled Orders</div>
+          </div>
+
+          <div class="product">
+            <div class="orders__single">
+              <div class="orders__preview-wrapper">
+                <div class="bold orders__number">Order #: 123</div>
+              </div>
+
+              <div class="orders__details-wrapper">
+                <div class="orders__title-wrapper">
+                  <div class="brand">Order placed on: 13 - Apr - 2025</div>
+
+                  <div class="bold">Total: ₹550</div>
+                </div>
+
+                <div class="orders__item">
+                  <img src="img/product.jpg" alt="" class="orders__img" />
+
+                  <div class="orders__item-details">
+                    <div class="s bold orders__item-name">Product Name</div>
+
+                    <div class="orders__item-info">
+                      Size <span class="bold">L</span>
+                    </div>
+
+                    <div class="orders__item-totals">
+                      <div class="orders__item-info">
+                        Qty <span class="bold">1</span>
+                      </div>
+                      <div class="orders__item-info">
+                        Subtotal <span class="bold"> ₹225</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="orders__item">
+                  <img src="img/product.jpg" alt="" class="orders__img" />
+
+                  <div class="orders__item-details">
+                    <div class="s bold orders__item-name">Product Name</div>
+
+                    <div class="orders__item-info">
+                      Size <span class="bold">L</span>
+                    </div>
+
+                    <div class="orders__item-totals">
+                      <div class="orders__item-info">
+                        Qty <span class="bold">1</span>
+                      </div>
+                      <div class="orders__item-info">
+                        Subtotal <span class="bold"> ₹225</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="orders__single">
+              <div class="orders__preview-wrapper">
+                <div class="bold orders__number">Order #: 123</div>
+              </div>
+
+              <div class="orders__details-wrapper">
+                <div class="orders__title-wrapper">
+                  <div class="brand">Order placed on: 13 - Apr - 2025</div>
+
+                  <div class="bold">Total: ₹550</div>
+                </div>
+
+                <div class="orders__item">
+                  <img src="img/product.jpg" alt="" class="orders__img" />
+
+                  <div class="orders__item-details">
+                    <div class="s bold orders__item-name">Product Name</div>
+
+                    <div class="orders__item-info">
+                      Size <span class="bold">L</span>
+                    </div>
+
+                    <div class="orders__item-totals">
+                      <div class="orders__item-info">
+                        Qty <span class="bold">1</span>
+                      </div>
+                      <div class="orders__item-info">
+                        Subtotal <span class="bold"> ₹225</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="orders__item">
+                  <img src="img/product.jpg" alt="" class="orders__img" />
+
+                  <div class="orders__item-details">
+                    <div class="s bold orders__item-name">Product Name</div>
+
+                    <div class="orders__item-info">
+                      Size <span class="bold">L</span>
+                    </div>
+
+                    <div class="orders__item-totals">
+                      <div class="orders__item-info">
+                        Qty <span class="bold">1</span>
+                      </div>
+                      <div class="orders__item-info">
+                        Subtotal <span class="bold"> ₹225</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <footer class="footer">Copyright 2025 - sKeyy</footer>
+  </body>
+</html>
