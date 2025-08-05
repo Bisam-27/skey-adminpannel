@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skeyy Admin Panel</title>
+    <link rel="stylesheet" href="css/main.min.css" />
+  </head>
+  <body>
+    <div class="grid">
+      <div class="grid__nav">
+        <nav class="nav">
+          <a href="index.html" class="nav__logo-wrapper">
+            <img src="img/skey_logo.jpg" alt="sKeyy Logo" class="nav__logo" />
+          </a>
+
+          <div class="nav__contents">
+            <div class="nav__link-wrapper">
+              <a href="index.html" class="nav__link">Dashboard</a>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Orders</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="orders-unfulfilled.html" class="nav__link"
+                    >Unfulfilled (12)</a
+                  >
+                </li>
+                <li class="nav__link-list-item">
+                  <a href="orders-fulfilled.html" class="nav__link"
+                    >Fulfilled (12)</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Products</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="add-product.html" class="nav__link">Add New</a>
+                </li>
+                <li class="nav__link-list-item">
+                  <a
+                    href="select-product.html"
+                    class="nav__link nav__link--active"
+                    >Modify Existing</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Promos & Discounts</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="modify-discounts.html" class="nav__link"
+                    >Apply discounts</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Users</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="view-users.html" class="nav__link">View Users</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="grid__main">
+        <div class="nav-up">
+          <div class="nav-up__left">
+            <div class="s bold nav-up__current-page">Dashboard</div>
+
+            <form class="nav-up__search-wrapper" id="js-search-form">
+              <img
+                src="img/icon-search.svg"
+                alt="Search icon"
+                class="nav-up__seach-icon"
+              />
+
+              <input
+                type="text"
+                class="nav-up__input-control"
+                id="js-search"
+                placeholder="Search here..."
+              />
+            </form>
+          </div>
+
+          <div class="nav-up__right">
+            <a href="profile.html" class="nav-up__user">
+              <div class="nav-up__user-icon-wrapper">
+                <img src="img/icon-user.svg" alt="" class="nav-up__user-icon" />
+              </div>
+
+              Admin
+            </a>
+
+            <a href="logout.html" class="link">Logout</a>
+          </div>
+        </div>
+
+        <main class="grid__main">
+          <div class="grid__breadcrum">
+            <div class="grid__breadcrum-item">
+              <a
+                href="index.html"
+                class="grid__breadcrum-item grid__breadcrum-link"
+                >Dashboard</a
+              >
+            </div>
+            <div class="grid__breadcrum-item">Select Product</div>
+          </div>
+
+          <section class="product">
+            <section class="product__section">
+              <h2 class="m bold product__section-title">Filter Products</h2>
+
+              <div class="product__filters">
+                <div class="input">
+                  <label for="js-search" class="input__label">Search Products</label>
+                  <input
+                    type="text"
+                    class="input__control"
+                    id="js-search"
+                    placeholder="Search by name, description..."
+                  />
+                </div>
+
+                <div class="input">
+                  <label for="js-collection" class="input__label">Category</label>
+                  <select id="js-collection" class="input__control">
+                    <option value="">All Categories</option>
+                  </select>
+                </div>
+
+                <div class="input">
+                  <label for="js-subcategory" class="input__label">Subcategory</label>
+                  <select id="js-subcategory" class="input__control">
+                    <option value="">All Subcategories</option>
+                  </select>
+                </div>
+
+                <div class="input">
+                  <label for="js-vendor-filter" class="input__label">Vendor</label>
+                  <select id="js-vendor-filter" class="input__control">
+                    <option value="">All Vendors</option>
+                  </select>
+                </div>
+
+                <div class="product__filter-actions">
+                  <button class="btn btn--secondary" id="js-clear-filters">Clear Filters</button>
+                  <button class="btn btn--primary" id="js-apply-filters">Apply Filters</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="product__section">
+              <div class="product__header">
+                <h2 class="m bold product__section-title">Products</h2>
+                <div class="product__stats">
+                  <span id="js-product-count">Loading...</span>
+                </div>
+              </div>
+
+              <div class="product__loading" id="js-loading" style="display: none;">
+                <p>Loading products...</p>
+              </div>
+
+              <div class="product__cards-wrapper" id="js-products-container">
+                <!-- Products will be loaded here dynamically -->
+              </div>
+
+              <div class="product__pagination" id="js-pagination">
+                <!-- Pagination will be loaded here dynamically -->
+              </div>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <footer class="footer">Copyright 2025 - sKeyy</footer>
+
+    <script src="js/admin-utils.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/product-listing.js"></script>
+  </body>
+</html>

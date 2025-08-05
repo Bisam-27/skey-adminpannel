@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skeyy Admin Panel</title>
+    <link rel="stylesheet" href="css/main.min.css" />
+    <style>
+      .loading-message, .empty-message {
+        color: #6c757d;
+        font-style: italic;
+      }
+      #discount-help {
+        display: block;
+        margin-top: 4px;
+        font-size: 12px;
+        color: #6c757d;
+      }
+
+      /* Simple coupon card hover effect */
+      .cards__single {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .cards__single:hover {
+        background-color: #0ea5e9;
+        color: white;
+      }
+
+      .cards__single:hover .cards__item {
+        color: #f0f9ff;
+      }
+
+      .cards__single:hover .bold {
+        color: white;
+      }
+
+      /* Trash button hover effect */
+      .cards__single .btn--trash:hover {
+        background-color: #dc3545;
+        border-color: #dc3545;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="grid__nav">
+        <nav class="nav">
+          <a href="index.html" class="nav__logo-wrapper">
+            <img src="img/skey_logo.jpg" alt="sKeyy Logo" class="nav__logo" />
+          </a>
+
+          <div class="nav__contents">
+            <div class="nav__link-wrapper">
+              <a href="index.html" class="nav__link">Dashboard</a>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Orders</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="orders-unfulfilled.html" class="nav__link"
+                    >Unfulfilled (12)</a
+                  >
+                </li>
+                <li class="nav__link-list-item">
+                  <a href="orders-fulfilled.html" class="nav__link"
+                    >Fulfilled (12)</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Products</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="add-product.html" class="nav__link">Add New</a>
+                </li>
+                <li class="nav__link-list-item">
+                  <a href="select-product.html" class="nav__link"
+                    >Modify Existing</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Promos & Discounts</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a
+                    href="modify-discounts.html"
+                    class="nav__link nav__link--active"
+                    >Apply discounts</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Users</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="view-users.html" class="nav__link">View Users</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="grid__main">
+        <div class="nav-up">
+          <div class="nav-up__left">
+            <div class="s bold nav-up__current-page">Dashboard</div>
+
+            <form class="nav-up__search-wrapper" id="js-search-form">
+              <img
+                src="img/icon-search.svg"
+                alt="Search icon"
+                class="nav-up__seach-icon"
+              />
+
+              <input
+                type="text"
+                class="nav-up__input-control"
+                id="js-search"
+                placeholder="Search here..."
+              />
+            </form>
+          </div>
+
+          <div class="nav-up__right">
+            <a href="profile.html" class="nav-up__user">
+              <div class="nav-up__user-icon-wrapper">
+                <img src="img/icon-user.svg" alt="" class="nav-up__user-icon" />
+              </div>
+
+              Admin
+            </a>
+
+            <a href="logout.html" class="link">Logout</a>
+          </div>
+        </div>
+
+        <main class="grid__main">
+          <div class="grid__breadcrum">
+            <div class="grid__breadcrum-item">
+              <a
+                href="index.html"
+                class="grid__breadcrum-item grid__breadcrum-link"
+                >Dashboard</a
+              >
+            </div>
+
+            <div class="grid__breadcrum-item">Coupon Codes</div>
+          </div>
+
+          <div class="discounts">
+            <div class="discounts__wrapper">
+              <header class="discounts__header">
+                <div class="m bold">Create a coupon code</div>
+              </header>
+
+              <div class="discounts__form-wrapper">
+                <div class="input">
+                  <label for="js-vendor" class="input__label">Vendor</label>
+                  <select id="js-vendor" class="input__control">
+                    <option value="">Select Vendor</option>
+                  </select>
+                </div>
+
+                <div class="input">
+                  <label for="js-type" class="input__label">Product Type</label>
+                  <select id="js-type" class="input__control">
+                    <option value="">Select Type</option>
+                    <option value="collection">Collection</option>
+                    <option value="product">Specific Product</option>
+                  </select>
+                </div>
+
+                <div class="input" id="collection-group" style="display: none;">
+                  <label for="js-collection" class="input__label">Collection</label>
+                  <select id="js-collection" class="input__control">
+                    <option value="">Select Collection</option>
+                  </select>
+                </div>
+
+                <div class="input" id="product-group" style="display: none;">
+                  <label for="js-product" class="input__label">Product</label>
+                  <select id="js-product" class="input__control">
+                    <option value="">Select Product</option>
+                  </select>
+                </div>
+
+                <div class="input">
+                  <label for="js-discount-type" class="input__label">Coupon Type</label>
+                  <select id="js-discount-type" class="input__control">
+                    <option value="">Select Type</option>
+                    <option value="discount">Percentage Discount</option>
+                    <option value="flat_off">Flat Amount Off</option>
+                  </select>
+                </div>
+
+                <div class="input">
+                  <label for="js-discount" class="input__label">
+                    <span id="discount-label">Discount % / Amount</span>
+                  </label>
+                  <input
+                    type="number"
+                    class="input__control"
+                    id="js-discount"
+                    step="0.01"
+                    min="0"
+                  />
+                  <span class="input__error">Please enter a valid amount</span>
+                  <small id="discount-help">Enter percentage (0-100) or flat amount</small>
+                </div>
+
+                <div class="input">
+                  <label for="js-code" class="input__label">Coupon Code</label>
+                  <input
+                    type="text"
+                    class="input__control"
+                    id="js-code"
+                    placeholder="ABC123"
+                    maxlength="50"
+                  />
+                  <span class="input__error">Please enter a coupon code</span>
+                </div>
+
+                <div class="input">
+                  <label for="js-date" class="input__label">Expiration Date</label>
+                  <input
+                    type="date"
+                    class="input__control"
+                    id="js-date"
+                  />
+                </div>
+
+                <div class="input">
+                  <label for="js-usage-limit" class="input__label">Usage Limit (Optional)</label>
+                  <input
+                    type="number"
+                    class="input__control"
+                    id="js-usage-limit"
+                    min="1"
+                    placeholder="Leave empty for unlimited"
+                  />
+                </div>
+
+                <div class="input">
+                  <label for="js-min-amount" class="input__label">Minimum Order Amount (Optional)</label>
+                  <input
+                    type="number"
+                    class="input__control"
+                    id="js-min-amount"
+                    step="0.01"
+                    min="0"
+                    placeholder="₹0"
+                  />
+                </div>
+
+                <div class="discounts__btn-wrapper">
+                  <button class="btn btn--primary" id="js-discount-btn">
+                    Add Coupon
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="discounts__wrapper">
+              <header class="discounts__header">
+                <div class="m bold">Existing Coupons</div>
+              </header>
+
+              <div id="coupons-loading" class="loading-message" style="text-align: center; padding: 20px; display: none;">
+                Loading coupons...
+              </div>
+
+              <div id="coupons-container" class="cards">
+                <!-- Coupons will be loaded here dynamically -->
+              </div>
+
+              <div id="coupons-empty" class="empty-message" style="display: none; text-align: center; padding: 20px;">
+                No coupons found.
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <footer class="footer">Copyright 2025 - sKeyy</footer>
+    <script src="js/admin-utils.js"></script>
+    <script src="js/admin-coupons.js"></script>
+  </body>
+</html>

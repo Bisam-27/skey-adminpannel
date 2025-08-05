@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skeyy Admin Panel - View User</title>
+    <link rel="stylesheet" href="css/main.min.css" />
+    <link rel="stylesheet" href="css/view-users.css" />
+    <style>
+      .users__title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+      .section-header h3 {
+        margin: 0 0 1rem 0;
+        color: #333;
+        font-size: 1.25rem;
+      }
+      .vendor-info, .admin-info, .customer-info {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+      }
+      .vendor-actions, .customer-actions {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .admin-permissions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+      .permission-item {
+        color: #28a745;
+        font-weight: 500;
+      }
+      .btn {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn--primary {
+        background: #575fcf;
+        color: white;
+      }
+      .btn--secondary {
+        background: #6c757d;
+        color: white;
+      }
+      .btn:hover {
+        opacity: 0.9;
+      }
+      .error-actions {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="grid__nav">
+        <nav class="nav">
+          <a href="index.html" class="nav__logo-wrapper">
+            <img src="img/skey_logo.jpg" alt="sKeyy Logo" class="nav__logo" />
+          </a>
+
+          <div class="nav__contents">
+            <div class="nav__link-wrapper">
+              <a href="index.html" class="nav__link">Dashboard</a>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Orders</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="orders-unfulfilled.html" class="nav__link"
+                    >Unfulfilled (12)</a
+                  >
+                </li>
+                <li class="nav__link-list-item">
+                  <a href="orders-fulfilled.html" class="nav__link"
+                    >Fulfilled (12)</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Products</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="add-product.html" class="nav__link">Add New</a>
+                </li>
+                <li class="nav__link-list-item">
+                  <a href="select-product.html" class="nav__link"
+                    >View Vender</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Promos & Discounts</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="modify-discounts.html" class="nav__link"
+                    >Apply discounts</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__link-wrapper">
+              <div class="nav__link-title bold">Users</div>
+              <ul class="nav__link-list">
+                <li class="nav__link-list-item">
+                  <a href="view-users.html" class="nav__link">View Users</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="grid__main">
+        <div class="nav-up">
+          <div class="nav-up__left">
+            <div class="s bold nav-up__current-page">Dashboard</div>
+
+            <form class="nav-up__search-wrapper" id="js-search-form">
+              <img
+                src="img/icon-search.svg"
+                alt="Search icon"
+                class="nav-up__seach-icon"
+              />
+
+              <input
+                type="text"
+                class="nav-up__input-control"
+                id="js-search"
+                placeholder="Search here..."
+              />
+            </form>
+          </div>
+
+          <div class="nav-up__right">
+            <a href="profile.html" class="nav-up__user">
+              <div class="nav-up__user-icon-wrapper">
+                <img src="img/icon-user.svg" alt="" class="nav-up__user-icon" />
+              </div>
+
+              Admin
+            </a>
+
+            <a href="logout.html" class="link">Logout</a>
+          </div>
+        </div>
+
+        <main class="grid__main">
+          <div class="grid__breadcrum">
+            <div class="grid__breadcrum-item">
+              <a
+                href="index.html"
+                class="grid__breadcrum-item grid__breadcrum-link"
+                >Dashboard</a
+              >
+            </div>
+            <div class="grid__breadcrum-item">
+              <a
+                href="view-users.html"
+                class="grid__breadcrum-item grid__breadcrum-link"
+                >View Users</a
+              >
+            </div>
+            <div class="grid__breadcrum-item">View User</div>
+          </div>
+
+          <section class="users">
+            <div class="users__single">
+              <div class="users__title-wrapper">
+                <div class="bold l">User Name</div>
+              </div>
+
+              <div class="users__stats">
+                <div class="users__item">Total Product: 33</div>
+                <div class="users__item">Total Sales: INR 24000</div>
+                <div class="users__item">Sales this month: INR 24000</div>
+                <div class="users__item">Member since: 24/12/2025</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="product">
+            <div class="product__users-wrapper">
+              <div class="product-card">
+                <img src="img/product.jpg" alt="" class="product-card__img" />
+
+                <div class="product-card__content">
+                  <div class="bold s">Product Name</div>
+                </div>
+              </div>
+              <div class="product-card">
+                <img src="img/product.jpg" alt="" class="product-card__img" />
+
+                <div class="product-card__content">
+                  <div class="bold s">Product Name</div>
+                </div>
+              </div>
+              <div class="product-card">
+                <img src="img/product.jpg" alt="" class="product-card__img" />
+
+                <div class="product-card__content">
+                  <div class="bold s">Product Name</div>
+                </div>
+              </div>
+              <div class="product-card">
+                <img src="img/product.jpg" alt="" class="product-card__img" />
+
+                <div class="product-card__content">
+                  <div class="bold s">Product Name</div>
+                </div>
+              </div>
+              <div class="product-card">
+                <img src="img/product.jpg" alt="" class="product-card__img" />
+
+                <div class="product-card__content">
+                  <div class="bold s">Product Name</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <footer class="footer">Copyright 2025 - sKeyy</footer>
+
+    <script src="js/admin-utils.js"></script>
+    <script src="js/view-user.js"></script>
+  </body>
+</html>
