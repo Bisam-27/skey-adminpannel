@@ -1,53 +1,104 @@
-# Skeyy E-commerce Admin Panel
+# ⚙️ Skeyy Admin Panel
 
-A comprehensive administrative dashboard for managing the Skeyy e-commerce platform, built with HTML, CSS (SCSS), and JavaScript.
+The administrative dashboard for the Skeyy e-commerce platform, providing comprehensive platform management, user oversight, and business analytics with enhanced security.
 
-## 🚀 Overview
+## 🔗 Related Repositories
 
-The admin panel provides a complete management interface for administrators to oversee all aspects of the e-commerce platform including products, orders, users, coupons, and system analytics. It features a modern dashboard design with real-time data updates and comprehensive management tools.
+- **Admin Panel**: [https://github.com/Bisam-27/skey-adminpannel](https://github.com/Bisam-27/skey-adminpannel) (This Repository)
+- **Backend API**: [https://github.com/Bisam-27/skey-backend](https://github.com/Bisam-27/skey-backend)
+- **Frontend Portal**: [https://github.com/Bisam-27/skey-frontend](https://github.com/Bisam-27/skey-frontend)
+- **Vendor Panel**: [https://github.com/Bisam-27/skey-vendorpannel](https://github.com/Bisam-27/skey-vendorpannel)
 
-## 🛠 Technology Stack
+## 📚 Documentation Links
 
-- **HTML5**: Semantic markup and structure
-- **CSS3/SCSS**: Advanced styling with Sass preprocessing
-- **Vanilla JavaScript**: Dynamic functionality and API integration
-- **Grid Layout**: CSS Grid for responsive dashboard layout
-- **RESTful API Integration**: Backend communication
-- **Real-time Updates**: Live data refresh capabilities
+- [Backend API Documentation](https://github.com/Bisam-27/skey-backend#readme)
+- [Frontend Documentation](https://github.com/Bisam-27/skey-frontend#readme)
+- [Vendor Panel Documentation](https://github.com/Bisam-27/skey-vendorpannel#readme)
 
-## 📁 Project Structure
+## 🌟 Features
+
+### 🔐 Admin Authentication
+- **Secure Login**: Email/password authentication only
+- **No Google OAuth**: Enhanced security - admin accounts cannot be created via Google OAuth
+- **JWT Token Management**: Secure admin session handling
+- **Role-based Access**: Full platform access and control
+- **Session Security**: Enhanced security measures for admin accounts
+
+### 👥 User Management
+- **User Overview**: Complete user database management
+- **User Analytics**: Registration trends and user statistics
+- **Account Management**: Enable/disable user accounts
+- **Role Management**: Assign and modify user roles
+- **User Activity**: Monitor user behavior and activity
+
+### 🏪 Vendor Management
+- **Vendor Approval**: Review and approve vendor applications
+- **Vendor Analytics**: Business performance metrics
+- **Vendor Oversight**: Monitor vendor activities
+- **Business Verification**: Validate vendor documentation
+- **Vendor Support**: Handle vendor-related issues
+
+### 📦 Product Oversight
+- **Global Product Management**: Manage products across all vendors
+- **Product Approval**: Review and approve new products
+- **Category Management**: Create and manage product categories
+- **Content Moderation**: Review product descriptions and images
+- **Inventory Oversight**: Monitor stock levels across platform
+
+### 📊 Order Management
+- **Platform-wide Orders**: View all orders across all vendors
+- **Order Analytics**: Comprehensive order statistics
+- **Dispute Resolution**: Handle order-related issues
+- **Fulfillment Monitoring**: Track order completion rates
+- **Revenue Tracking**: Platform revenue and commission tracking
+
+### 🎫 Coupon System
+- **Global Coupons**: Create platform-wide discount codes
+- **Coupon Analytics**: Track coupon usage and effectiveness
+- **Vendor Coupon Oversight**: Monitor vendor-created coupons
+- **Promotional Campaigns**: Manage marketing campaigns
+- **Usage Analytics**: Detailed coupon performance metrics
+
+### 📈 Platform Analytics
+- **Dashboard Overview**: Key platform metrics
+- **Revenue Analytics**: Platform earnings and growth
+- **User Growth**: Registration and engagement trends
+- **Vendor Performance**: Business success metrics
+- **Market Insights**: Category and product trends
+
+## 🛠️ Technology Stack
+
+- **Frontend**: HTML5, CSS3/SCSS, Vanilla JavaScript
+- **Authentication**: JWT (Email/Password only)
+- **Charts & Analytics**: Chart.js, D3.js for data visualization
+- **Data Tables**: Advanced sorting, filtering, pagination
+- **Responsive Design**: Desktop-focused with mobile support
+- **API Integration**: RESTful backend communication
+- **Security**: Enhanced admin-level security measures
+
+## 📁 File Structure
 
 ```
 admin pannel/
+├── index.html              # Admin dashboard homepage
+├── login.html             # Admin login (no Google OAuth)
+├── users.html             # User management
+├── vendors.html           # Vendor management
+├── products.html          # Product oversight
+├── orders.html            # Order management
+├── coupons.html           # Coupon system management
+├── analytics.html         # Platform analytics
+├── categories.html        # Category management
+├── reports.html           # Reporting dashboard
+├── settings.html          # Platform settings
 ├── css/
-│   ├── abstracts/
-│   │   ├── _mixins.scss           # SCSS mixins
-│   │   ├── _functions.scss        # SCSS functions
-│   │   └── _variables.scss        # SCSS variables
-│   ├── base/
-│   │   ├── _typography.scss       # Typography styles
-│   │   ├── _base.scss            # Base styles
-│   │   ├── _utilities.scss       # Utility classes
-│   │   └── _animations.scss      # Animation definitions
-│   ├── components/
-│   │   ├── _buttons.scss         # Button styles
-│   │   ├── _input.scss           # Input field styles
-│   │   ├── _links.scss           # Link styles
-│   │   └── _toast.scss           # Toast notification styles
-│   ├── layout/
-│   │   ├── _navigation.scss      # Navigation styles
-│   │   ├── _footer.scss          # Footer styles
-│   │   ├── _grid.scss            # Grid layout styles
-│   │   ├── _orders.scss          # Order layout styles
-│   │   └── _cards.scss           # Card layout styles
-│   ├── pages/
-│   │   ├── _home.scss            # Dashboard home styles
-│   │   ├── _login.scss           # Login page styles
-│   │   ├── _product.scss         # Product management styles
-│   │   ├── _discounts.scss       # Discount management styles
-│   │   └── _users.scss           # User management styles
-│   ├── main.scss                 # Main SCSS file
-│   ├── main.css                  # Compiled CSS
+│   ├── abstracts/         # SCSS variables, mixins, functions
+│   ├── base/              # Base styles, typography, utilities
+│   ├── components/        # Reusable UI components
+│   ├── layout/            # Navigation, grid, cards
+│   ├── pages/             # Page-specific styles
+│   ├── main.scss          # Main SCSS file
+│   ├── main.css           # Compiled CSS
 │   ├── main.min.css             # Minified CSS
 │   ├── dashboard.css             # Dashboard-specific styles
 │   └── view-users.css           # User view styles
