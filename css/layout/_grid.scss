@@ -1,0 +1,43 @@
+.grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 1.6rem;
+  padding-right: 2rem;
+
+  @include respond(800px) {
+    grid-template-columns: 1fr;
+    padding-right: unset;
+  }
+
+  &__main {
+    @include respond(800px) {
+      padding: 1rem;
+    }
+  }
+
+  &__breadcrum {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 2rem 0;
+  }
+
+  &__breadcrum-item {
+    &:not(:last-child) {
+      &::after {
+        content: ">";
+      }
+    }
+  }
+
+  &__breadcrum-link {
+    color: $color-primary;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}
